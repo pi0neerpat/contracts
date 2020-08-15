@@ -809,17 +809,20 @@ contract Staking is StakingV1Storage, GraphUpgradeable, IStaking, Governed {
      * @param _tokens Amount of tokens to collect
      */
     function collect(uint256 _tokens, address _channelID) external override {
-        Allocation memory alloc = allocations[_channelID];
-
         // Channel identifier validation
         require(_channelID != address(0), "Collect: invalid channel");
 
+        // NOTE: commented out for easier test of state-channel integrations
+        // NOTE: this validation might be removed in the future if no harm to the
+        // NOTE: economic incentive structure is done by an external caller use
+        // NOTE: of this function
         // The contract caller must be a channel proxy registered during allocation
         // The channelID must be related to the caller address
-        require(
-            alloc.channelProxy == msg.sender,
-            "Collect: caller is not related to the channel allocation"
-        );
+        // Allocation memory alloc = allocations[_channelID];
+        // require(
+        //     alloc.channelProxy == msg.sender,
+        //     "Collect: caller is not related to the channel allocation"
+        // );
 
         // Transfer tokens to collect from multisig to this contract
         require(

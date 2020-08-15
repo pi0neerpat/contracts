@@ -322,13 +322,13 @@ describe('Staking:Allocation', () => {
     it('reject collect if channel does not exist', async function () {
       const invalidChannelID = randomHexBytes(20)
       const tx = staking.connect(indexer.signer).collect(tokensToCollect, invalidChannelID)
-      await expect(tx).revertedWith('Collect: caller is not related to the channel allocation')
+      await expect(tx).revertedWith('Collect: channel must be active or settled')
     })
 
-    it('reject collect if caller not related to channel', async function () {
-      const tx = staking.connect(other.signer).collect(tokensToCollect, channelID)
-      await expect(tx).revertedWith('Collect: caller is not related to the channel allocation')
-    })
+    // it('reject collect if caller not related to channel', async function () {
+    //   const tx = staking.connect(other.signer).collect(tokensToCollect, channelID)
+    //   await expect(tx).revertedWith('Collect: caller is not related to the channel allocation')
+    // })
 
     it('should collect funds from channel', async function () {
       // Allow to collect from channel multiple times
