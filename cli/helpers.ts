@@ -8,13 +8,14 @@ dotenv.config()
 
 export const defaultOverrides = (): Overrides => {
   return {
-    gasPrice: utils.parseUnits('25', 'gwei'),
+    gasPrice: utils.parseUnits('50', 'gwei'),
     gasLimit: 2000000,
   }
 }
 
 export class IPFS {
   static createIpfsClient(node: string): typeof ipfsHttpClient {
+    console.log(ipfsHttpClient)
     let url: URL
     try {
       url = new URL(node)

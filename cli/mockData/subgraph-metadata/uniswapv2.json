@@ -1,0 +1,7 @@
+{
+    "description": "Uniswap V2",
+    "displayName": "Uniswap V2",
+    "image": "https://api.thegraph.com/ipfs/api/v0/cat?arg=QmWQn64mrw9eVBfau2TxknR8bQNs4BkCy7mUi9UaZG9ofs",
+    "codeRepository": "https://github.com/uniswap/uniswap-v2-subgraph",
+    "website": ""
+  }
