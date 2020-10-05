@@ -18,6 +18,7 @@ import { RewardsManager } from '../../build/typechain/contracts/RewardsManager'
 import { EthereumDidRegistry } from '../../build/typechain/contracts/EthereumDidRegistry'
 import { Gdai } from '../../build/typechain/contracts/Gdai'
 import { GsrManager } from '../../build/typechain/contracts/GsrManager'
+import { GraphGovernance } from '../../build/typechain/contracts/GraphGovernance'
 
 // Default configuration used in tests
 
@@ -238,6 +239,30 @@ export async function deployRewardsManager(
 
   // Impl accept and initialize
   await contract.connect(deployer).acceptProxy(proxy.address, controller)
+
+  // Use proxy to forward calls to implementation contract
+  return Promise.resolve(contract.attach(proxy.address))
+}
+
+export async function deployGraphGovernance(
+  deployer: Signer,
+  governor: string,
+): Promise<GraphGovernance> {
+  // Impl
+  const contract = ((await deployContract(
+    'GraphGovernance',
+    deployer,
+  )) as unknown) as GraphGovernance
+
+  // Proxy
+  const proxy = ((await deployContract(
+    'GraphProxy',
+    deployer,
+    contract.address,
+  )) as unknown) as GraphProxy
+
+  // Impl accept and initialize
+  await contract.connect(deployer).acceptProxy(proxy.address, governor)
 
   // Use proxy to forward calls to implementation contract
   return Promise.resolve(contract.attach(proxy.address))
