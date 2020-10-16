@@ -73,7 +73,7 @@ export const sendTransaction = async (
   // Send transaction
   let tx: ContractTransaction
   try {
-    tx = await contract.functions[fn](...params)
+    tx = await contract.functions[fn](...params, defaultOverrides())
   } catch (e) {
     if (e.code == 'UNPREDICTABLE_GAS_LIMIT') {
       logger.warn(`Gas could not be estimated - trying defaultOverrides`)
