@@ -111,7 +111,7 @@ export const sendTransaction = async (
 ): Promise<providers.TransactionReceipt> => {
   // Setup overrides
   if (overrides) {
-    params.push(overrides)
+    params.push(defaultOverrides)
   } else {
     params.push(defaultOverrides)
   }

@@ -195,7 +195,7 @@ const config = {
     },
   },
   etherscan: {
-    url: 'https://api-kovan.etherscan.io/api',
+    url: 'https://api-rinkeby.etherscan.io/api',
     apiKey: process.env.ETHERSCAN_API_KEY,
   },
   gasReporter: {
