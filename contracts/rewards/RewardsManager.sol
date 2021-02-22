@@ -3,7 +3,7 @@
 pragma solidity ^0.7.3;
 pragma experimental ABIEncoderV2;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
 
 import "../upgrades/GraphUpgradeable.sol";
 
