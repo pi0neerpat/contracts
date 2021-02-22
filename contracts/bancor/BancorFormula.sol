@@ -2,7 +2,7 @@
 
 pragma solidity ^0.7.3;
 
-import "@openzeppelin/contracts/math/SafeMath.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol";
 
 contract BancorFormula {
     using SafeMath for uint256;

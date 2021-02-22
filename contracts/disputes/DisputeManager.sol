@@ -3,8 +3,8 @@
 pragma solidity ^0.7.3;
 pragma experimental ABIEncoderV2;
 
-import "@openzeppelin/contracts/math/SafeMath.sol";
-import "@openzeppelin/contracts/cryptography/ECDSA.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol";
+import "../cryptography/ECDSA.sol";
 
 import "../governance/Managed.sol";
 import "../upgrades/GraphUpgradeable.sol";
