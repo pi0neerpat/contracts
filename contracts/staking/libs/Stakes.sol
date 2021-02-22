@@ -3,7 +3,7 @@
 pragma solidity ^0.7.3;
 pragma experimental ABIEncoderV2;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.2.0-solc-0.7/contracts/math/SafeMath.sol";
 
 /**
  * @title A collection of data structures and functions to manage the Indexer Stake state.
