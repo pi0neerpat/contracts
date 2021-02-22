@@ -2,7 +2,7 @@
 
 pragma solidity ^0.7.3;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Address.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.2.0-solc-0.7/contracts/utils/Address.sol";
 
 import "./GraphProxyStorage.sol";
 
